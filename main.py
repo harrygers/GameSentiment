@@ -2,6 +2,7 @@ import tweepy
 from textblob import TextBlob
 
 # Step 1 - Authenticate
+#do the twitter stuff to make sure it works
 consumer_key= 'CONSUMER_KEY_HERE'
 consumer_secret= 'CONSUMER_SECRET_HERE'
 
@@ -14,15 +15,10 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 #Step 3 - Retrieve Tweets
+#change to be about games and add another search
 public_tweets = api.search('Trump')
 
-
-
-#CHALLENGE - Instead of printing out each tweet, save each Tweet to a CSV file
-#and label each one as either 'positive' or 'negative', depending on the sentiment 
-#You can decide the sentiment polarity threshold yourself
-
-
+#add tweets to a .csv file
 for tweet in public_tweets:
     print(tweet.text)
     
